@@ -138,12 +138,12 @@ class MicrosoftAuthenticationBackend(ModelBackend):
 
         try:
             microsoft_user = MicrosoftAccount.objects.get(
-                microsoft_id=data["sub"]
+                microsoft_id=data["oid"]
             )
         except MicrosoftAccount.DoesNotExist:
             if self.config.MICROSOFT_AUTH_AUTO_CREATE:
                 # create new Microsoft Account
-                microsoft_user = MicrosoftAccount(microsoft_id=data["sub"])
+                microsoft_user = MicrosoftAccount(microsoft_id=data["oid"])
                 microsoft_user.save()
 
         return microsoft_user
