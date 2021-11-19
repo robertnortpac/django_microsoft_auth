@@ -79,7 +79,8 @@
             this._loginWindow = window.open(
                 this._loginURL,
                 'microsoft-login',
-                'height=560, width=790, left=550, top=200, menubar=no, location=no, resizable=no, scrollbars=yes, status=no, toolbar=no'
+                '_self'
+                //'height=560, width=790, left=550, top=200, menubar=no, location=no, resizable=no, scrollbars=yes, status=no, toolbar=no'
             );
         }
 
